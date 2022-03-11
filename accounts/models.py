@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 from .managers import *
 
 
-class BaseAccount(AbstractUser, PermissionsMixin):
+class BaseAccount(AbstractUser):
     username = None
     id = models.UUIDField(primary_key=True, editable=False,
                           auto_created=True, default=uuid4)
