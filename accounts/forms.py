@@ -12,4 +12,4 @@ class AccountCreationForm(UserCreationForm):
 class AccountChangeForm(UserChangeForm):
     class Meta:
         mdoel = BaseAccount
-        fields = ("email",'first_name','last_name','date_joined')
+        fields = ("email",'first_name','last_name','contact_no','date_joined')

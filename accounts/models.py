@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.core.validators import RegexValidator
 from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from uuid import uuid4
 from .managers import *
@@ -11,6 +12,21 @@ class BaseAccount(AbstractUser, PermissionsMixin):
                           auto_created=True, default=uuid4)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
+    contact_no = models.CharField(
+        _("Phone No(without country code or 0)"),
+        max_length=15, unique=True,
+        db_index=True,
+        blank=True,
+        null=True,
+        help_text="""
+            👌🏻E.g - 9881284481
+            ❌ +91 9812300122
+            ❌ 09812300122
+        """,
+        validators=[
+            RegexValidator(r'^\d{10}$', "Phone no should contain 10 digits")
+        ]
+    )
     email = models.EmailField(
         verbose_name="Email Id",
         unique=True, max_length=350,
