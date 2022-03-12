@@ -14,9 +14,8 @@ class Department(models.Model):
         max_length=300,
         help_text="e.g., Domain : Computer Science"
     )
-    degree = models.CharField(
+    degree = models.PositiveSmallIntegerField(
         "Degree Level",
-        max_length=100,
         blank=True,
         choices=_deglevel.choices(),
         default=_deglevel.BACHELORS
@@ -34,11 +33,10 @@ class Student(models.Model):
         _("University Roll"),
         unique=True, db_index=True, help_text="Your University Roll No - (e.g. - 13071020030)"
     )
-    current_sem = models.CharField(
+    current_sem = models.PositiveSmallIntegerField(
         _("Choose Sem [1-10]-th"),
         choices=_sem.choices(),
         default=_sem.FIRST,
-        max_length=10,
         db_index=True,
         help_text="Select Your On Going Sem🔢",
     )

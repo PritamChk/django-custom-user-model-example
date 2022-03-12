@@ -15,7 +15,7 @@ class Semester(_enum):
 
     @classmethod
     def choices(cls):
-        return ((tag.k, tag.v) for tag in cls)
+        return ((tag.value, tag.name) for tag in cls)
 
 
 class Degree(_enum):
@@ -26,4 +26,4 @@ class Degree(_enum):
 
     @classmethod
     def choices(cls):
-        return ((tag.k, tag.v) for tag in cls)
+        return ((tag.value, tag.name) for tag in cls)
