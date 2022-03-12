@@ -1,5 +1,6 @@
+from http.client import HTTPResponse
 from django.shortcuts import render
-from django.http.request import HttpRequest
+from django.http import HttpResponse
 
 def test(request):
-    return HttpRequest("hello")
+    return HttpResponse("hello")
