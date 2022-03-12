@@ -40,9 +40,13 @@ INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_APPS = []
-DEV_APPS = []
+
+DEV_APPS = [
+    "django_extensions",
+]
+
 OWN_APPS = [
-    "accounts"
+    "accounts",
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + DEV_APPS + OWN_APPS
