@@ -16,3 +16,14 @@ class Semester(_enum):
     @classmethod
     def choices(cls):
         return ((tag.k, tag.v) for tag in cls)
+
+
+class Degree(_enum):
+    BACHELORS = "Bachelor's Degree"
+    MASTERS = "Master's Degree"
+    PHD = "PhD"
+    DIPLOMA = "Diploma"
+
+    @classmethod
+    def choices(cls):
+        return ((tag.k, tag.v) for tag in cls)
