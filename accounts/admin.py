@@ -4,6 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 from .forms import *
 from .models import BaseAccount
 
+admin.site.site_header = "Custome User Testing"
 
 @admin.register(BaseAccount)
 class BaseAccountAdmin(UserAdmin):
