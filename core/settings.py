@@ -47,6 +47,7 @@ DEV_APPS = [
 
 OWN_APPS = [
     "accounts",
+    "testprofile",
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + DEV_APPS + OWN_APPS
